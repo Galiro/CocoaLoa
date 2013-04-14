@@ -11,16 +11,35 @@
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
+        
       body {
+        padding-top: 100px;
+        background: url(navy_blue.png);
+      }
+      
+      .rox {
+            
+        padding-top: 100px;
+            
+       }
+        
+        .box {
+        max-width: 100;
+        padding: 19px 29px 29px;
         padding-top: 60px;
-        padding-bottom: 40px;
-        background: url(light_alu.png);
+        margin: 0 auto 20px;
+        overflow:hidden;
+        
+        background-color: #FEF9E1;
+        
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 40px rgba(0,0,0,.55);
+           -moz-box-shadow: 0 1px 40px rgba(0,0,0,.55);
+                box-shadow: 0 1px 40px rgba(0,0,0,.55);
       }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-         
-
+        
       @media (max-width: 980px) {
         /* Enable use of floated navbar text */
         .navbar-text.pull-right {
@@ -55,58 +74,56 @@
             <p class="navbar-text pull-right">
               <a onclick="proceed();" class="navbar-link">Logout</a>
             </p>
-            <ul class="nav">
-                <li></li>
+            <ul class="nav pull-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Messages</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
-          <div class="hero-unit">
-            <h1>Hello, User!</h1>
-            <p>This layout is currently under construction, but provides a basic function of communication with the CocoaLoa API. As of now, only emails can be processed.</p>
-            <p>
-                <div class="btn-group" data-toggle="buttons-radio">
-                  <button type="button" class="btn btn-primary btn-large" href="#email" role="button" class="btn" data-toggle="modal">Email</button>
-                  <button type="button" class="btn btn-primary btn-large">Text</button>
-                  <button type="button" class="btn btn-primary btn-large">Call<% @name %></button>
-                </div>
-            </p>
-         </div>
+      
 
 
-      <hr>
+       <div class="container-fluid">
+                
+                <div class="row-fluid">
+                    <div class="span8">
+                          <div class="hero-unit">
+                            <h2>New Message</h2>
+                            <form class="form-signin" action="/email" method="post">
+                                <input type="text" class="input-block-level" placeholder="To" name="to">
+                                <div class="form-inline">
+                                      <input type="text" class="input-small" placeholder="Time" name="time">
+                                        <select name="type">
+                                          <option>Seconds</option>
+                                          <option>Minutes</option>
+                                          <option>Hours</option>
+                                          <option>Days</option>
+                                          <option>Years</option>
+                                        </select>
+                                </div>
+                                
+                               <p> <textarea type="text" rows="5" class="input-block-level" placeholder="Message" name="message"></textarea> </p>
+                               <input class="btn btn-info btn-large" type="submit"  value="Send"/>
+                          </form>
+                          </div>
+                      </div>
+                      <div class="span4">
+                          <div class="well">
+                            <h2>Recent</h2>
+                          </div>
+                      </div>
+                      
+                      <div class="span4">
+                          <div class="well">
+                            <h2>Upcoming</h2>
+                          </div>
+                      </div>
+                 </div>   
+            </div>
 
-
-
-    </div><!--/.fluid-container-->
-    
+            
 
      
     <!-- Modal -->
@@ -141,6 +158,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="roar.js"></script>
     <script src="js/bootstrap.js"></script>
     <script>
         $(function ()  
@@ -155,6 +173,14 @@
             document.body.appendChild(form)
             form.submit();
         }
+        
+        $(function(){
+          $('.container').masonry({
+            // options
+            itemSelector : '.item',
+            columnWidth : 240
+          });
+        });
     </script>
 
 

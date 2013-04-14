@@ -61,6 +61,7 @@ end
 
 get "/home" do
     @name = User.first(:name)
+    puts @name
     
     if logged_in?
 		@user = User.first(:hashed_password => session[:user])

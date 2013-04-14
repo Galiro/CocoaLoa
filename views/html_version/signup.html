@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>CocoaLoa | Login</title>
+    <title>CocoaLoa | Signup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,16 +12,15 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
-        padding-top: 120px;
+        padding-top: 40px;
         padding-bottom: 40px;
-        background: url(Depositphotos_4492117_original.jpg);
-        background-size: cover;
+        background: url(create600c273.png);
+            
       }
 
       .form-signin {
         max-width: 300px;
         padding: 19px 29px 29px;
-        padding-top: 60px;
         margin: 0 auto 20px;
         /*background-color: #fff;
         border: 1px solid #e5e5e5; */
@@ -42,13 +41,7 @@
         height: auto;
         margin-bottom: 15px;
         padding: 7px 9px;
-        
-        
       }
-        .center {
-            text-align:center;
-        }
-        
 
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
@@ -65,23 +58,38 @@
 
     <div class="container">
 
-      <form class="form-signin" action="/login" method="post">
-        <h2 class="form-signin-heading center">CocoaLoa</h2>
-        <input type="text" class="input-block-level" placeholder="Email address" name="email">
+      <form class="form-signin" action="/user/create" method="post">
+        <h2 class="form-signin-heading">Sign up</h2>
+        <input type="text" class="input-block-level" placeholder="Name" name="name">
         <input type="password" class="input-block-level" placeholder="Password" name="password">
+        <input type="password" class="input-block-level" placeholder="Password" name="password2">
+        <input type="text" class="input-block-level" placeholder="Email address" name="email">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-        <p class="center"><button class="btn btn-large btn-info" type="submit">Sign in</button></p>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form>
+      
+      
 
     </div> <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
-
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
 
   </body>
 </html>
